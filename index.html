@@ -404,6 +404,16 @@
             font-weight: 600;
         }
 
+        .contact-link {
+            color: #5a5a5a;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-link:hover {
+            color: #d4534f;
+        }
+
         footer {
             background: #2c2c2c;
             text-align: center;
@@ -581,14 +591,18 @@
     <section id="gallery" class="gallery-section">
         <h2 class="section-title">Photos</h2>
         <div class="carousel-container">
-            <div class="carousel-track" id="carouselTrack"></div>
-            <button class="carousel-btn prev" onclick="moveSlide(-1)" aria-label="Previous image">‹</button>
-            <button class="carousel-btn next" onclick="moveSlide(1)" aria-label="Next image">›</button>
-        </div>
-        <div class="carousel-indicators" id="indicators"></div>
-    </section>
-
-    <section id="contact">
+            <div class="contact-item">
+                <strong>Address</strong>
+                <address style="font-style: normal;">
+                    <a href="https://maps.google.com/?q=2822+Brower+Ave+Oceanside+NY+11572" target="_blank" rel="noopener" class="contact-link">
+                        2822 Brower Ave<br>Oceanside, NY 11572
+                    </a>
+                </address>
+            </div>
+            <div class="contact-item">
+                <strong>Phone</strong>
+                <a href="tel:+15165365460" class="contact-link">(516) 536-5460</a>
+            </div>
         <h2 class="section-title">Visit Us</h2>
         <div class="contact-info">
             <div class="contact-item">
