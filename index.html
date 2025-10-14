@@ -3,7 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mario's Pizza - Oceanside's Finest</title>
+    
+    <!-- Primary Meta Tags -->
+    <title>Mario's Pizza Oceanside | Authentic Italian Pizza Since 1985 | Oceanside, NY</title>
+    <meta name="title" content="Mario's Pizza Oceanside | Authentic Italian Pizza Since 1985 | Oceanside, NY">
+    <meta name="description" content="Family-owned pizzeria serving authentic brick oven Italian pizza in Oceanside, Baldwin, East Rockaway & Rockville Centre for over 43 years. Order online for pickup & delivery!">
+    <meta name="keywords" content="Mario's Pizza, Oceanside pizza, Italian pizza, brick oven pizza, family pizzeria, Oceanside NY, Baldwin pizza, East Rockaway pizza, Rockville Centre pizza, best pizza near me, authentic Italian restaurant">
+    <meta name="author" content="Mario's Pizza Oceanside">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mariospizzaoceanside.com/">
+    <meta property="og:title" content="Mario's Pizza Oceanside | Authentic Italian Pizza Since 1985">
+    <meta property="og:description" content="Family-owned pizzeria serving authentic brick oven Italian pizza for over 43 years. Order online now!">
+    <meta property="og:image" content="https://mariospizzaoceanside.com/mariophotos/Mario's%20Pizza%206.png">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Mario's Pizza Oceanside">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://mariospizzaoceanside.com/">
+    <meta property="twitter:title" content="Mario's Pizza Oceanside | Authentic Italian Pizza Since 1985">
+    <meta property="twitter:description" content="Family-owned pizzeria serving authentic brick oven Italian pizza for over 43 years. Order online now!">
+    <meta property="twitter:image" content="https://mariospizzaoceanside.com/mariophotos/Mario's%20Pizza%206.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://mariospizzaoceanside.com/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Local Business Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Mario's Pizza Oceanside",
+      "image": "https://mariospizzaoceanside.com/mariophotos/Mario's%20Pizza%206.png",
+      "description": "Family-owned pizzeria serving authentic brick oven Italian pizza in Oceanside, Baldwin, East Rockaway and Rockville Centre for over 43 years.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2822 Brower Ave",
+        "addressLocality": "Oceanside",
+        "addressRegion": "NY",
+        "postalCode": "11572",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 40.6389,
+        "longitude": -73.6401
+      },
+      "url": "https://mariospizzaoceanside.com",
+      "telephone": "+15165365460",
+      "servesCuisine": ["Italian", "Pizza"],
+      "priceRange": "$$",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+          "opens": "11:00",
+          "closes": "22:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Friday", "Saturday"],
+          "opens": "11:00",
+          "closes": "23:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "12:00",
+          "closes": "21:00"
+        }
+      ],
+      "foundingDate": "1985",
+      "menu": "https://mariospizzaoceanside.avcoindustries.com/order-now",
+      "hasMenu": "https://mariospizzaoceanside.avcoindustries.com/order-now",
+      "acceptsReservations": "False"
+    }
+    </script>
+    
     <style>
         * {
             margin: 0;
@@ -75,7 +157,7 @@
             align-items: center;
             justify-content: center;
             background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
-                        url("mariophotos/Mario's Pizza 6.png");
+                        url("mariophotos/hero.jpeg");
             background-size: cover;
             background-position: center;
             overflow: hidden;
@@ -471,7 +553,7 @@
 <body>
     <nav>
         <div class="nav-logo">MARIO'S</div>
-        <button class="menu-toggle" id="menuToggle">☰</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">☰</button>
         <ul class="nav-links" id="navLinks">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -485,7 +567,7 @@
             <h1 class="logo">MARIO'S</h1>
             <p class="tagline">Authentic Italian Since 1985</p>
             <div class="cta-container">
-                <a href="https://mariospizzaoceanside.avcoindustries.com/order-now" target="_blank" class="cta-button">Order Online</a>
+                <a href="https://mariospizzaoceanside.avcoindustries.com/order-now" target="_blank" rel="noopener" class="cta-button" aria-label="Order Mario's Pizza online">Order Online</a>
             </div>
             <div class="trust-badges">
                 <div class="badge">Family Owned</div>
@@ -498,7 +580,7 @@
     <section id="about" class="about-section">
         <h2 class="section-title">Our Story</h2>
         <div class="about-content">
-            <p>We are a family-owned pizzeria, servicing Oceanside, Baldwin, East Rockaway and Rockville Centre for over 43 years!</p>
+            <p>We are a family-owned pizzeria, servicing Oceanside, Baldwin, East Rockaway and Rockville Centre for over 43 years! Since 1985, Mario's Pizza has been crafting authentic Italian brick oven pizza using fresh ingredients and traditional recipes passed down through generations. Our commitment to quality and community has made us a beloved destination for the best pizza on Long Island.</p>
         </div>
     </section>
 
@@ -506,8 +588,8 @@
         <h2 class="section-title">Photos</h2>
         <div class="carousel-container">
             <div class="carousel-track" id="carouselTrack"></div>
-            <button class="carousel-btn prev" onclick="moveSlide(-1)">‹</button>
-            <button class="carousel-btn next" onclick="moveSlide(1)">›</button>
+            <button class="carousel-btn prev" onclick="moveSlide(-1)" aria-label="Previous image">‹</button>
+            <button class="carousel-btn next" onclick="moveSlide(1)" aria-label="Next image">›</button>
         </div>
         <div class="carousel-indicators" id="indicators"></div>
     </section>
@@ -517,10 +599,11 @@
         <div class="contact-info">
             <div class="contact-item">
                 <strong>Address</strong>
-                2822 Brower Ave<br>Oceanside, NY 11572
+                <address style="font-style: normal;">2822 Brower Ave<br>Oceanside, NY 11572</address>
             </div>
             <div class="contact-item">
-                <strong>Phone</strong>(516) 536-5460
+                <strong>Phone</strong>
+                <a href="tel:+15165365460" style="color: #5a5a5a; text-decoration: none;">(516) 536-5460</a>
             </div>
             <div class="contact-item">
                 <strong>Hours</strong>
@@ -559,12 +642,13 @@
             imageNames.forEach((image, index) => {
                 const slide = document.createElement('div');
                 slide.className = 'carousel-slide';
-                slide.innerHTML = `<img src="mariophotos/${image}" alt="Mario's Pizza ${index + 1}" loading="lazy">`;
+                slide.innerHTML = `<img src="mariophotos/${image}" alt="Delicious brick oven pizza at Mario's Pizza Oceanside - Image ${index + 1}" loading="lazy">`;
                 track.appendChild(slide);
 
                 const indicator = document.createElement('div');
                 indicator.className = `indicator ${index === 0 ? 'active' : ''}`;
                 indicator.onclick = () => goToSlide(index);
+                indicator.setAttribute('aria-label', `Go to image ${index + 1}`);
                 indicators.appendChild(indicator);
             });
 
