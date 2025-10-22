@@ -3,35 +3,63 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mario's Pizza - Oceanside's Finest</title>
+  <title>Mario's Pizza - Oceanside, NY | Italian Pizzeria Since 1985</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      background: #FAF9F6; /* Warm White */
-      color: #2c2c2c;
-      overflow-x: hidden;
+      font-family: Georgia, 'Times New Roman', serif;
+      background: #ffffff;
+      color: #333;
+      line-height: 1.6;
     }
 
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(250, 249, 246, 0.98);
-      padding: 1rem 5%;
-      z-index: 1000;
+    /* Header with Contact Info */
+    .top-bar {
+      background: #d32f2f;
+      color: white;
+      padding: 10px 5%;
+      font-size: 0.95rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .top-bar-left, .top-bar-right {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .top-bar a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .top-bar a:hover {
+      text-decoration: underline;
+    }
+
+    nav {
+      background: white;
+      padding: 1.2rem 5%;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     .nav-logo {
-      font-size: 1.6rem;
+      font-size: 2rem;
       font-weight: 700;
-      color: #8E5A2D; /* Rustic Brown */
-      letter-spacing: 1px;
+      color: #d32f2f;
+      font-family: Georgia, serif;
     }
 
     .nav-links {
@@ -41,17 +69,15 @@
     }
 
     .nav-links a {
-      color: #2c2c2c;
+      color: #333;
       text-decoration: none;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-weight: 600;
-      transition: color 0.3s;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: color 0.2s;
     }
 
     .nav-links a:hover {
-      color: #C0392B; /* Tomato Red */
+      color: #d32f2f;
     }
 
     .menu-toggle {
@@ -59,246 +85,319 @@
       font-size: 1.8rem;
       background: none;
       border: none;
-      color: #2c2c2c;
+      color: #333;
       cursor: pointer;
     }
 
+    /* Hero Section - More modest */
     .hero {
       position: relative;
-      height: 100vh;
-      min-height: 600px;
+      height: 450px;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(
-          rgba(0, 0, 60, 0.35), 
-          rgba(0, 0, 40, 0.45)
-        ),
+      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
         url("mariophotos/Mario's Pizza 6.png");
       background-size: cover;
       background-position: center;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.35) 100%);
     }
 
     .hero-content {
       text-align: center;
-      z-index: 2;
       padding: 2rem;
-      max-width: 700px;
+      max-width: 900px;
     }
 
     .logo {
-      font-size: 6rem;
+      font-size: 4rem;
       font-weight: 700;
-      margin-bottom: 0.5rem;
-      color: #FAF9F6;
-      letter-spacing: 8px;
-      text-transform: uppercase;
-      text-shadow: 3px 3px 12px rgba(0,0,0,0.6);
-      animation: fadeInDown 1s ease;
-    }
-
-    .personality-tagline {
-      font-size: 1.3rem;
-      color: #F1C40F; /* Parmesan Yellow */
-      font-weight: 600;
-      letter-spacing: 2px;
-      margin-bottom: 0.5rem;
-      text-transform: uppercase;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
-      animation: fadeInUp 1s ease 0.1s backwards;
+      margin-bottom: 1rem;
+      color: white;
+      font-family: Georgia, serif;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
     }
 
     .tagline {
       font-size: 1.4rem;
-      margin-bottom: 3rem;
-      color: #FAF9F6;
+      margin-bottom: 2rem;
+      color: white;
       font-weight: 400;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
-      animation: fadeInUp 1s ease 0.2s backwards;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
     }
 
     .cta-container {
       display: flex;
-      flex-direction: column;
       gap: 1rem;
-      align-items: center;
-      animation: fadeInUp 1s ease 0.4s backwards;
+      justify-content: center;
+      flex-wrap: wrap;
     }
 
     .cta-button {
       display: inline-block;
-      padding: 20px 60px;
-      background: #C0392B; /* Tomato Red */
-      color: #FAF9F6;
+      padding: 15px 35px;
+      background: #d32f2f;
+      color: white;
       text-decoration: none;
-      font-size: 1.1rem;
-      font-weight: 700;
-      border: none;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      transition: all 0.3s ease;
-      box-shadow: 0 8px 25px rgba(192, 57, 43, 0.4);
-      border-radius: 50px;
-      position: relative;
-      overflow: hidden;
+      font-size: 1.05rem;
+      font-weight: 600;
+      border-radius: 4px;
+      transition: background 0.2s;
     }
 
     .cta-button:hover {
-      background: #A93226;
-      transform: translateY(-3px);
-      box-shadow: 0 12px 35px rgba(192, 57, 43, 0.5);
+      background: #b71c1c;
     }
 
-    .trust-badges {
-      display: flex;
-      gap: 2rem;
-      justify-content: center;
-      margin-top: 3rem;
-      flex-wrap: wrap;
+    .cta-button.secondary {
+      background: white;
+      color: #d32f2f;
     }
 
-    .badge {
-      background: rgba(255,255,255,0.15);
-      backdrop-filter: blur(10px);
-      padding: 12px 25px;
-      border-radius: 30px;
-      color: #FAF9F6;
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      border: 1px solid rgba(255,255,255,0.3);
+    .cta-button.secondary:hover {
+      background: #f5f5f5;
+    }
+
+    /* Info Boxes */
+    .info-boxes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 0;
+      margin: 0;
+    }
+
+    .info-box {
+      background: #f9f9f9;
+      padding: 3rem 2rem;
+      text-align: center;
+      border: 1px solid #e0e0e0;
+    }
+
+    .info-box:nth-child(even) {
+      background: #ffffff;
+    }
+
+    .info-box h3 {
+      color: #d32f2f;
+      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+      font-family: Georgia, serif;
+    }
+
+    .info-box p {
+      color: #666;
+      font-size: 1rem;
+      line-height: 1.6;
     }
 
     section {
-      padding: 120px 5%;
+      padding: 60px 5%;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     .section-title {
       font-size: 2.5rem;
-      text-align: center;
-      margin-bottom: 4rem;
-      color: #8E5A2D;
-      font-weight: 600;
-      letter-spacing: 4px;
-      text-transform: uppercase;
+      margin-bottom: 2rem;
+      color: #333;
+      font-weight: 700;
+      font-family: Georgia, serif;
+      border-bottom: 3px solid #d32f2f;
+      padding-bottom: 0.5rem;
+      display: inline-block;
     }
 
     .about-content {
-      max-width: 800px;
-      margin: 0 auto;
       font-size: 1.1rem;
-      line-height: 2;
-      color: #5a5a5a;
-      font-weight: 300;
-      text-align: center;
+      line-height: 1.8;
+      color: #555;
     }
 
-    /* Map Section */
-    .map-section iframe {
+    .about-content p {
+      margin-bottom: 1.2rem;
+    }
+
+    .about-content strong {
+      color: #333;
+    }
+
+    /* Gallery */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .gallery-grid img {
       width: 100%;
-      height: 450px;
-      border: 0;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      height: 250px;
+      object-fit: cover;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
     }
 
-    .map-btn {
+    .gallery-grid img:hover {
+      transform: scale(1.02);
+    }
+
+    /* Contact Section */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+      margin-top: 2rem;
+    }
+
+    .contact-box {
+      background: #f9f9f9;
+      padding: 2rem;
+      border-left: 4px solid #d32f2f;
+      border-radius: 4px;
+    }
+
+    .contact-box h3 {
+      color: #d32f2f;
+      font-size: 1.4rem;
+      margin-bottom: 1.2rem;
+      font-family: Georgia, serif;
+    }
+
+    .contact-box p {
+      margin-bottom: 0.7rem;
+      color: #555;
+      font-size: 1rem;
+    }
+
+    .contact-box a {
+      color: #d32f2f;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .contact-box a:hover {
+      text-decoration: underline;
+    }
+
+    .hours-table {
+      margin-top: 1rem;
+    }
+
+    .hours-table p {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .hours-table p:last-child {
+      border-bottom: none;
+    }
+
+    /* Map */
+    .map-container {
+      margin-top: 2.5rem;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 400px;
+      border: 0;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .directions-btn {
       display: inline-block;
       margin-top: 1.5rem;
-      padding: 14px 40px;
-      background: #27AE60; /* Basil Green */
-      color: #FAF9F6;
+      padding: 12px 30px;
+      background: #d32f2f;
+      color: white;
       text-decoration: none;
-      text-transform: uppercase;
-      font-weight: 700;
-      letter-spacing: 2px;
-      border-radius: 50px;
-      box-shadow: 0 8px 20px rgba(39,174,96,0.4);
-      transition: all 0.3s ease;
+      font-weight: 600;
+      border-radius: 4px;
+      transition: background 0.2s;
     }
 
-    .map-btn:hover {
-      background: #2ecc71;
-      transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(46,204,113,0.5);
+    .directions-btn:hover {
+      background: #b71c1c;
     }
 
     footer {
-      background: #8E5A2D;
+      background: #333;
       text-align: center;
-      padding: 3rem;
-      color: #FAF9F6;
-      font-size: 0.85rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
+      padding: 2.5rem;
+      color: white;
+      font-size: 0.95rem;
     }
 
-    /* Sticky Button */
-    .sticky-order {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background: #C0392B;
-      color: #FAF9F6;
-      font-weight: 700;
-      font-size: 1rem;
-      text-transform: uppercase;
-      padding: 18px 40px;
-      border-radius: 50px;
-      box-shadow: 0 10px 30px rgba(192,57,43,0.5);
-      text-decoration: none;
-      z-index: 2000;
-      transition: all 0.3s ease, opacity 0.4s ease;
-      opacity: 0;
-      pointer-events: none;
+    footer p {
+      margin-bottom: 0.5rem;
     }
 
-    .sticky-order.visible {
-      opacity: 1;
-      pointer-events: auto;
+    footer a {
+      color: white;
+      text-decoration: underline;
     }
 
-    .sticky-order:hover {
-      background: #F1C40F;
-      color: #2c2c2c;
-      transform: translateY(-3px);
-      box-shadow: 0 12px 35px rgba(241,196,15,0.4);
-    }
-
-    @media (max-width: 600px) {
-      .sticky-order {
-        bottom: 15px;
-        right: 15px;
-        font-size: 0.9rem;
-        padding: 15px 25px;
+    /* Mobile */
+    @media (max-width: 768px) {
+      .top-bar {
+        font-size: 0.85rem;
+        justify-content: center;
+        text-align: center;
       }
-    }
 
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+      .top-bar-left, .top-bar-right {
+        justify-content: center;
+      }
 
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+      .nav-links {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .logo {
+        font-size: 2.8rem;
+      }
+
+      .tagline {
+        font-size: 1.2rem;
+      }
+
+      .cta-button {
+        padding: 12px 25px;
+        font-size: 1rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
+  <!-- Top Contact Bar -->
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <span>📞 <a href="tel:5165365460">(516) 536-5460</a></span>
+      <span>📍 2822 Brower Ave, Oceanside, NY 11572</span>
+    </div>
+    <div class="top-bar-right">
+      <span><strong>Hours:</strong> Sun-Thu 11am-10pm | Fri-Sat 11am-11pm</span>
+    </div>
+  </div>
+
+  <!-- Navigation -->
   <nav>
-    <div class="nav-logo">MARIO'S</div>
+    <div class="nav-logo">Mario's Pizza</div>
     <button class="menu-toggle" id="menuToggle">☰</button>
     <ul class="nav-links" id="navLinks">
       <li><a href="#home">Home</a></li>
@@ -308,88 +407,108 @@
     </ul>
   </nav>
 
+  <!-- Hero Section -->
   <section id="home" class="hero">
     <div class="hero-content">
-      <h1 class="logo">MARIO'S</h1>
-      <p class="personality-tagline">Oceanside’s Favorite Slice</p>
-      <p class="tagline">Authentic Italian Since 1985</p>
+      <h1 class="logo">Mario's Pizza</h1>
+      <p class="tagline">Family-Owned Italian Pizzeria Since 1985</p>
       <div class="cta-container">
         <a href="https://mariospizzaoceanside.avcoindustries.com/order-now" target="_blank" class="cta-button">Order Online</a>
-      </div>
-      <div class="trust-badges">
-        <div class="badge">Family Owned</div>
-        <div class="badge">Fresh Daily</div>
-        <div class="badge">Brick Oven</div>
+        <a href="tel:5165365460" class="cta-button secondary">Call to Order</a>
       </div>
     </div>
   </section>
 
+  <!-- Info Boxes -->
+  <div class="info-boxes">
+    <div class="info-box">
+      <h3>Over 40 Years</h3>
+      <p>Serving Oceanside and surrounding communities since 1985</p>
+    </div>
+    <div class="info-box">
+      <h3>Brick Oven</h3>
+      <p>Traditional brick oven pizza made fresh daily</p>
+    </div>
+    <div class="info-box">
+      <h3>Family Owned</h3>
+      <p>Locally owned and operated by the same family</p>
+    </div>
+  </div>
+
+  <!-- About Section -->
   <section id="about">
-    <h2 class="section-title">Our Story</h2>
+    <h2 class="section-title">About Mario's Pizza</h2>
     <div class="about-content">
-      <p>We are a family-owned pizzeria serving Oceanside, Baldwin, East Rockaway, and Rockville Centre for over 43 years!</p>
+      <p>Mario's Pizza has been a cornerstone of the Oceanside community since 1985. For over 40 years, we've been serving authentic Italian pizza and Italian-American cuisine to our neighbors in Oceanside, Baldwin, East Rockaway, and Rockville Centre.</p>
+      
+      <p>Our family-owned pizzeria takes pride in using traditional recipes and fresh ingredients. Every pizza is made to order in our brick oven, ensuring that each slice meets the high standards our customers have come to expect over the decades.</p>
+      
+      <p>Whether you're stopping by for a quick slice, ordering dinner for the family, or catering your next event, we're here to serve you with the same quality and care that has kept us in business for over four decades.</p>
     </div>
   </section>
 
+  <!-- Gallery Section -->
   <section id="gallery">
-    <h2 class="section-title">Gallery</h2>
-    <div class="gallery-grid" style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center;">
-      <img src="mariophotos/Mario's Pizza 1.png" alt="Pizza 1" style="width: 300px; border-radius: 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.12); object-fit: cover;">
-      <img src="mariophotos/Mario's Pizza 2.png" alt="Pizza 2" style="width: 300px; border-radius: 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.12); object-fit: cover;">
-      <img src="mariophotos/Mario's Pizza 3.png" alt="Pizza 3" style="width: 300px; border-radius: 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.12); object-fit: cover;">
-      <img src="mariophotos/Mario's Pizza 4.png" alt="Pizza 4" style="width: 300px; border-radius: 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.12); object-fit: cover;">
-      <img src="mariophotos/Mario's Pizza 5.png" alt="Pizza 5" style="width: 300px; border-radius: 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.12); object-fit: cover;">
+    <h2 class="section-title">Our Pizza</h2>
+    <div class="gallery-grid">
+      <img src="mariophotos/Mario's Pizza 1.png" alt="Fresh Pizza">
+      <img src="mariophotos/Mario's Pizza 2.png" alt="Brick Oven Pizza">
+      <img src="mariophotos/Mario's Pizza 3.png" alt="Pizza Slice">
+      <img src="mariophotos/Mario's Pizza 4.png" alt="Italian Pizza">
+      <img src="mariophotos/Mario's Pizza 5.png" alt="Mario's Specialty Pizza">
     </div>
   </section>
 
+  <!-- Contact Section -->
   <section id="contact">
-    <h2 class="section-title">Visit Us</h2>
-    <div class="about-content">
-      <p><strong>Address:</strong> 2822 Brower Ave, Oceanside, NY 11572</p>
-      <p><strong>Phone:</strong> (516) 536-5460</p>
-      <p><strong>Hours:</strong><br>
-        Mon–Thu: 11am–10pm<br>
-        Fri–Sat: 11am–11pm<br>
-        Sun: 12pm–9pm
-      </p>
-    </div>
-  </section>
+    <h2 class="section-title">Location & Hours</h2>
+    
+    <div class="contact-grid">
+      <div class="contact-box">
+        <h3>Address</h3>
+        <p>2822 Brower Ave<br>
+        Oceanside, NY 11572</p>
+        <p><a href="https://www.google.com/maps/place/2822+Brower+Ave,+Oceanside,+NY+11572" target="_blank">Get Directions →</a></p>
+      </div>
 
-  <section class="map-section">
-    <h2 class="section-title">Get Directions</h2>
-    <div class="about-content">
+      <div class="contact-box">
+        <h3>Phone</h3>
+        <p><a href="tel:5165365460">(516) 536-5460</a></p>
+        <p style="margin-top: 1rem;">Call us to place an order or ask about our menu and catering options.</p>
+      </div>
+
+      <div class="contact-box">
+        <h3>Hours</h3>
+        <div class="hours-table">
+          <p><span>Sunday - Thursday</span> <strong>11:00 AM - 10:00 PM</strong></p>
+          <p><span>Friday - Saturday</span> <strong>11:00 AM - 11:00 PM</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Map -->
+    <div class="map-container">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.6819498027134!2d-73.64024082350296!3d40.6352991714081!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c264a83f4e0c47%3A0x2b6ccf71df3b9c9c!2sMario%E2%80%99s%20Pizza%20Oceanside!5e0!3m2!1sen!2sus!4v1697035690198!5m2!1sen!2sus"
         allowfullscreen=""
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"></iframe>
-      <a href="https://www.google.com/maps/place/2822+Brower+Ave,+Oceanside,+NY+11572" target="_blank" class="map-btn">Get Directions</a>
+      <a href="https://www.google.com/maps/place/2822+Brower+Ave,+Oceanside,+NY+11572" target="_blank" class="directions-btn">Open in Google Maps</a>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Mario's Pizza Oceanside. All rights reserved.</p>
+    <p>2822 Brower Ave, Oceanside, NY 11572 | <a href="tel:5165365460">(516) 536-5460</a></p>
   </footer>
-
-  <!-- Sticky order button -->
-  <a href="https://mariospizzaoceanside.avcoindustries.com/order-now"
-     target="_blank"
-     class="sticky-order"
-     id="stickyOrderBtn">Order Online</a>
 
   <script>
     const menuToggle = document.getElementById('menuToggle');
     const navLinks = document.getElementById('navLinks');
-    const stickyBtn = document.getElementById('stickyOrderBtn');
 
-    menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
-
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 200) {
-        stickyBtn.classList.add('visible');
-      } else {
-        stickyBtn.classList.remove('visible');
-      }
+    menuToggle.addEventListener('click', () => {
+      navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
     });
   </script>
 </body>
